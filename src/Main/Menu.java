@@ -12,7 +12,7 @@ public  class Menu {
 
     public  static void mainMenu(){
         System.out.print("==============================\n"+
-                "1. 분류 매개변수 메뉴\n"+
+                "1. 분류 기준 메뉴\n"+
                 "2. 고객 정보 매뉴\n"+
                 "3. 요약 메뉴\n"+
                 "4. 프로그램 종료\n"+

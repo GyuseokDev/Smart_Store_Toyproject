@@ -22,13 +22,21 @@ public  class Summary_main {
         int menuNum = sc.nextInt();
         boolean status = false;
         switch (menuNum){
-            case 1://Summary_just()
+            case 1:
+                System.out.println("고객 정보를 출력합니다.");
+                //Summary_just()
                 break;
-            case 2://SummaryByName()
+            case 2:
+                System.out.println("고객 정보를 이름순으로 출력합니다.");
+                //SummaryByName()
                 break;
-            case 3://SummaryBySpentTime()
+            case 3:
+                System.out.println("고객 정보를 사용 사용시간순으로 출력합니다.");
+                //SummaryBySpentTime()
                 break;
-            case 4://SummaryByPayment()
+            case 4:
+                System.out.println("고객 정보를 총 사용금액순으로 출력합니다.");
+                //SummaryByPayment()
                 break;
             case 5:
                 System.out.println("메인메뉴로 돌아갑니다.");

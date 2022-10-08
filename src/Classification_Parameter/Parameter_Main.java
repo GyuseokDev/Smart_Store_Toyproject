@@ -7,9 +7,9 @@ public class Parameter_Main {
      static Scanner sc = new Scanner(System.in);
     public static void parameterMenu() {
         System.out.print("==============================\n" +
-                " 1. 매개변수 설정\n" +
-                " 2. 매개변수 보기\n" +
-                " 3. 매개변수 업데이트\n" +
+                " 1. 분류기준 설정\n" +
+                " 2. 분류기준 보기\n" +
+                " 3. 분류기준 업데이트\n" +
                 " 4. 메인메뉴\n" +
                 "==============================\n" +
                 "메뉴를 선택해주세요:");
@@ -21,11 +21,16 @@ public class Parameter_Main {
         boolean status=false;
         switch (menuNum){
             case 1:
+                System.out.println("분류기준를 설정합니다.");
                 //Set_Parameter()
                 break;
-            case 2://Update_Parameter()
+            case 2:
+                System.out.println("분류기준를 출력합니다.");
+                //Update_Parameter()
                 break;
-            case 3://View_Parameter()
+            case 3:
+                System.out.println("분류기준를 변경 합니다.");
+                //View_Parameter()
                 break;
             case 4:
                 System.out.println("메인메뉴로 돌아갑니다.");

@@ -22,13 +22,21 @@ public class Customer_Main {
         int menuNum = sc.nextInt();
         boolean status = false;
         switch (menuNum){
-            case 1://Add_Customer()
+            case 1:
+                System.out.println("고객 정보를 추가합니다.");
+                //Add_Customer()
                 break;
-            case 2://View_Customer()
+            case 2:
+                System.out.println("고객 정보를 출력합니다.");
+                //View_Customer()
                 break;
-            case 3://Update_Customer()
+            case 3:
+                System.out.println("고객 정보를 변경합니다.");
+                //Update_Customer()
                 break;
-            case 4://Delete_Customer()
+            case 4:
+                System.out.println("고객 정보를 삭제합니다.");
+                //Delete_Customer()
                 break;
             case 5:
                 System.out.println("메인메뉴로 돌아갑니다.");
