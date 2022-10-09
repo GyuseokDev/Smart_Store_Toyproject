@@ -1,7 +1,7 @@
 package Customer_Data;
 
 public class Customer {
-    private static int customerNum= 1000;
+    private static int customerNum= 0;
     private int serialNO;
     private String customerName;
     private String customerID;
@@ -54,5 +54,10 @@ public class Customer {
 
     public int getSerialNO() {
         return serialNO;
+    }
+    public String showCustomerInfo(){
+        String info = "serialNO:"+serialNO+", 고객 이름: "+customerName+", 고객 아이디: "+customerID+", 고객 사용 시간: "+customerSpentTime+"시간, 고객 사용 총액: "
+                +customerPayment+"원 입니다.";
+        return info;
     }
 }
