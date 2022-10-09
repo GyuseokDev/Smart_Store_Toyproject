@@ -9,7 +9,7 @@ public class Parameter_Main {
         System.out.print("==============================\n" +
                 " 1. 분류기준 설정\n" +
                 " 2. 분류기준 보기\n" +
-                " 3. 분류기준 업데이트\n" +
+                " 3. 분류기준 수정\n" +
                 " 4. 메인메뉴\n" +
                 "==============================\n" +
                 "메뉴를 선택해주세요:");
@@ -21,16 +21,16 @@ public class Parameter_Main {
         boolean status=false;
         switch (menuNum){
             case 1:
-                System.out.println("분류기준를 설정합니다.");
-                //Set_Parameter()
+                System.out.println("분류기준를 설정 합니다.");
+                Set_Parameter.set_menu();
                 break;
             case 2:
-                System.out.println("분류기준를 출력합니다.");
-                //Update_Parameter()
+                System.out.println("분류기준를 출력 합니다.");
+                View_Parameter.viewMenu();
                 break;
             case 3:
-                System.out.println("분류기준를 변경 합니다.");
-                //View_Parameter()
+                System.out.println("분류기준를 수정 합니다.");
+                Update_Parameter.set_menu();
                 break;
             case 4:
                 System.out.println("메인메뉴로 돌아갑니다.");

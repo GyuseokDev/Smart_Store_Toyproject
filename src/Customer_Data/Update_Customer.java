@@ -97,7 +97,7 @@ static int targetNum;
         System.out.print("현재 사용금액은 "+Add_Customer.customerArray[targetNum].getCustomerPayment()+"원 입니다.\n"+
                 "변경하실 금액을 입력해주세요.");
         int money = sc.nextInt();
-        Add_Customer.customerArray[targetNum].setCustomerSpentTime(money);
+        Add_Customer.customerArray[targetNum].setCustomerPayment(money);
         System.out.println("사용금액이 변경되었습니다.");
     }
 
