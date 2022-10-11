@@ -10,7 +10,7 @@ public class Add_Customer {
     public static Customer[] customerArray = new Customer[num];
 
 
-    //Test Code
+//    Test Code
 //    public static int num = 11;
 //    public static Customer[] customerArray = {
 //            new Customer("bca",null,0,0),
