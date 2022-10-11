@@ -5,13 +5,9 @@ import Customer_Data.Customer;
 import java.util.Scanner;
 
 public class SummaryByPayment {
-
-   static int GeneralCnt = Summary_.getGeneralCNT();
-   static int VIPCnt = Summary_.getVipCNT();
-   static int VVIPCnt = Summary_.getVvipCNT();
-   static Customer[] toCompareGeneral_Ascending = new Customer[GeneralCnt];
-   static Customer[] toCompareVIP_Ascending = new Customer[VIPCnt];
-   static Customer[] toCompareVVIP_Ascending = new Customer[VVIPCnt];
+   static Customer[] toCompareGeneral_Ascending = new Customer[Summary_.getGeneralCNT()];
+   static Customer[] toCompareVIP_Ascending = new Customer[Summary_.getVipCNT()];
+   static Customer[] toCompareVVIP_Ascending = new Customer[Summary_.getVvipCNT()];
 
 
    public static void showByPayment_Menu(){
@@ -103,14 +99,14 @@ public static void makeArr(){
 //General 그룹 사용금액별 크기로 정렬
    public static void makeGeneralArrByPaytment_Ascending() {
       //비교하기위한 새로운 배열 생성(빈배열)
-      for (int i = 0; i < GeneralCnt; i++) {
+      for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
          toCompareGeneral_Ascending[i] = new Customer(null, null, 0, 0);
       }
       //비교
-      for (int i = 0; i < GeneralCnt; i++) {
-         for (int j = 0; j < GeneralCnt; j++) {
+      for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
+         for (int j = 0; j < Summary_.getGeneralCNT(); j++) {
             if (Summary_.generalArr[i].getCustomerPayment() >= toCompareGeneral_Ascending[j].getCustomerPayment()) {
-               for (int k = (GeneralCnt - 2); k >= j; k--) {
+               for (int k = (Summary_.getGeneralCNT() - 2); k >= j; k--) {
                   toCompareGeneral_Ascending[k + 1] = toCompareGeneral_Ascending[k];
                }
                toCompareGeneral_Ascending[j] = Summary_.generalArr[i];
@@ -121,14 +117,14 @@ public static void makeArr(){
    }
 
       public static void makeVIPArrByPayment_Ascending(){
-         for (int i = 0; i < VIPCnt; i++) {
+         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             toCompareVIP_Ascending[i] = new Customer(null, null, 0, 0);
          }
          //비교
-         for (int i = 0; i < VIPCnt; i++) {
-            for (int j = 0; j < VIPCnt; j++) {
+         for (int i = 0; i < Summary_.getVipCNT(); i++) {
+            for (int j = 0; j < Summary_.getVipCNT(); j++) {
                if (Summary_.vipArr[i].getCustomerPayment() >= toCompareVIP_Ascending[j].getCustomerPayment()) {
-                  for (int k = (VIPCnt - 2); k >= j; k--) {
+                  for (int k = (Summary_.getVipCNT() - 2); k >= j; k--) {
                      toCompareVIP_Ascending[k + 1] = toCompareVIP_Ascending[k];
                   }
                   toCompareVIP_Ascending[j] = Summary_.vipArr[i];
@@ -139,14 +135,14 @@ public static void makeArr(){
    }
 
    public static void makeVVIPArrByPayment_Ascending(){
-      for (int i = 0; i < VVIPCnt; i++) {
+      for (int i = 0; i < Summary_.getVvipCNT(); i++) {
          toCompareVVIP_Ascending[i] = new Customer(null, null, 0, 0);
       }
       //비교
-      for (int i = 0; i < VVIPCnt; i++) {
-         for (int j = 0; j < VVIPCnt; j++) {
+      for (int i = 0; i < Summary_.getVvipCNT(); i++) {
+         for (int j = 0; j < Summary_.getVvipCNT(); j++) {
             if (Summary_.vvipArr[i].getCustomerPayment() >= toCompareVVIP_Ascending[j].getCustomerPayment()) {
-               for (int k = (VVIPCnt - 2); k >= j; k--) {
+               for (int k = (Summary_.getVvipCNT() - 2); k >= j; k--) {
                   toCompareVVIP_Ascending[k + 1] = toCompareVVIP_Ascending[k];
                }
                toCompareVVIP_Ascending[j] = Summary_.vvipArr[i];
@@ -155,7 +151,5 @@ public static void makeArr(){
          }
       }
    }
-
-
 
 }

@@ -32,7 +32,7 @@ public  class Summary_main {
                 break;
             case 3:
                 System.out.println("고객 정보를 사용 사용시간순으로 출력합니다.");
-                //SummaryBySpentTime()
+                SummaryBySpentTime.showByTime_Menu();
                 break;
             case 4:
                 System.out.println("고객 정보를 총 사용금액순으로 출력합니다.");
