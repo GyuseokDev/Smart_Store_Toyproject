@@ -28,7 +28,7 @@ public  class Summary_main {
                 break;
             case 2:
                 System.out.println("고객 정보를 이름순으로 출력합니다.");
-                //SummaryByName()
+                SummaryByName.test();
                 break;
             case 3:
                 System.out.println("고객 정보를 사용 사용시간순으로 출력합니다.");

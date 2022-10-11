@@ -10,8 +10,10 @@ public class Add_Customer {
     static int add_num;
 //    public static Customer[] customerArray = new Customer[num];
 //    public static int num = 0;
-    public static int num = 9;
+    public static int num = 11;
     public static Customer[] customerArray = {
+            new Customer("bca",null,0,0),
+             new Customer("abc",null,0,0),
             new Customer("A",null,0,0),
             new Customer("B",null,5,1000),
             new Customer("C",null,9,120000),

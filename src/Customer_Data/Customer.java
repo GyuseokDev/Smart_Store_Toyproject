@@ -23,6 +23,24 @@ public class Customer {
     public String getCustomerName() {
         return customerName;
     }
+    public int getCustomerNameByCharToSmall(){
+        if (customerName==null) {
+            return 0;
+        }else {
+            int i = (int) customerName.charAt(0);
+            if (i < 97) {
+                i += 32;
+            }
+            return i;
+        }
+    }
+    public int getCustomerNameByCharToOrigin(){
+        if (customerName==null){
+            return 0;
+        }else {
+            return (int) customerName.charAt(0);
+        }
+    }
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
