@@ -1,6 +1,8 @@
 package Main;
 
 import Classification_Parameter.Parameter_Main;
+import Customer_Data.Add_Customer;
+import Customer_Data.Customer;
 import Customer_Data.Customer_Main;
 import Summary.*;
 

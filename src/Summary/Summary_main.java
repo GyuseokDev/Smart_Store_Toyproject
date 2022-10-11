@@ -36,7 +36,7 @@ public  class Summary_main {
                 break;
             case 4:
                 System.out.println("고객 정보를 총 사용금액순으로 출력합니다.");
-                //SummaryByPayment()
+                SummaryByPayment.showByPayment_Menu();
                 break;
             case 5:
                 System.out.println("메인메뉴로 돌아갑니다.");

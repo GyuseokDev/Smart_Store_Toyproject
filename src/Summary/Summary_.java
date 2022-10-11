@@ -62,9 +62,9 @@ public class Summary_ {
         System.out.println("==============================\nVVIP List");
         for (int i=0;i<vvipArr.length;i++){
             System.out.println(vvipArr[i].showCustomerInfo());
-            System.out.println("==============================");
-            System.out.println("\n출력이 완료되었습니다.\n");
         }
+        System.out.println("==============================");
+        System.out.println("\n출력이 완료되었습니다.\n");
     }
 
 
