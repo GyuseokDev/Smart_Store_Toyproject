@@ -2,7 +2,7 @@ package Main;
 
 import Classification_Parameter.Parameter_Main;
 import Customer_Data.Customer_Main;
-import Summary.Summary_main;
+import Summary.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -36,6 +36,7 @@ public  class Menu {
                     break;
                 case 3:
                     System.out.println("요약 메뉴로 이동합니다.");
+                    Summary_.makeArr();
                     Summary_main.summaryMenu();
                     break;
                 case 4:

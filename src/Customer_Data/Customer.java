@@ -39,6 +39,7 @@ public class Customer {
     public int getCustomerSpentTime() {
         return customerSpentTime;
     }
+    public Integer getCustomerSpentTimeAsInteger(){ return this.customerSpentTime; }
 
     public void setCustomerSpentTime(int customerSpentTime) {
         this.customerSpentTime = customerSpentTime;
@@ -47,6 +48,8 @@ public class Customer {
     public int getCustomerPayment() {
         return customerPayment;
     }
+    public Integer getCustomerPaymentAsInteger(){ return this.customerPayment; }
+
 
     public void setCustomerPayment(int customerPayment) {
         this.customerPayment = customerPayment;
@@ -60,4 +63,7 @@ public class Customer {
                 +customerPayment+"원 입니다.";
         return info;
     }
+
+
+
 }

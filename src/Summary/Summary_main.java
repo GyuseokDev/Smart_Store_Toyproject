@@ -24,7 +24,7 @@ public  class Summary_main {
         switch (menuNum){
             case 1:
                 System.out.println("고객 정보를 출력합니다.");
-                //Summary_just()
+                Summary_.show();
                 break;
             case 2:
                 System.out.println("고객 정보를 이름순으로 출력합니다.");
