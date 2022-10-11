@@ -8,22 +8,25 @@ public class Add_Customer {
 
 
     static int add_num;
-//    public static Customer[] customerArray = new Customer[num];
-//    public static int num = 0;
-    public static int num = 11;
-    public static Customer[] customerArray = {
-            new Customer("bca",null,0,0),
-             new Customer("abc",null,0,0),
-            new Customer("A",null,0,0),
-            new Customer("B",null,5,1000),
-            new Customer("C",null,9,120000),
-            new Customer("d",null,10,100000),
-            new Customer("e",null,15,150000),
-            new Customer("f",null,19,500000),
-            new Customer("g",null,20,500000),
-            new Customer("h",null,25,550000),
-            new Customer("i",null,50,1000000)
-};
+    public static int num =0;
+    public static Customer[] customerArray = new Customer[num];
+
+
+    //Test Code
+//    public static int num = 11;
+//    public static Customer[] customerArray = {
+//            new Customer("bca",null,0,0),
+//             new Customer("abc",null,0,0),
+//            new Customer("A",null,0,0),
+//            new Customer("B",null,5,1000),
+//            new Customer("C",null,9,120000),
+//            new Customer("d",null,10,100000),
+//            new Customer("e",null,15,150000),
+//            new Customer("f",null,19,500000),
+//            new Customer("g",null,20,500000),
+//            new Customer("h",null,25,550000),
+//            new Customer("i",null,50,1000000)
+//};
 
 
 

@@ -131,15 +131,12 @@ public static void showByName_Descending(){
         }
     }
     public static void makeGeneralArrByName_Descending() {
-        //비교하기위한 새로운 배열 생성(빈배열)
         for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
             toCompareGeneral_Descending[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
             for (int j = 0; j < Summary_.getGeneralCNT(); j++) {
                 if (Summary_.generalArr[i].getCustomerNameByCharToSmall() >= toCompareGeneral_Descending[j].getCustomerNameByCharToSmall())
-                        //소문자인 경우
                     if(Summary_.generalArr[i].getCustomerNameByCharToSmall() == toCompareGeneral_Descending[j].getCustomerNameByCharToSmall()&&
                     Summary_.generalArr[i].getCustomerNameByCharToOrigin()>toCompareGeneral_Descending[j].getCustomerNameByCharToOrigin()){
                         for (int k=(Summary_.getGeneralCNT()-2);k>=(j+1);k--){
@@ -164,11 +161,9 @@ public static void showByName_Descending(){
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             toCompareVIP_Ascending[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             for (int j = 0; j < Summary_.getVipCNT(); j++) {
                 if (Summary_.vipArr[i].getCustomerNameByCharToSmall() >= toCompareVIP_Ascending[j].getCustomerNameByCharToSmall())
-                    //소문자인 경우
                     if(Summary_.vipArr[i].getCustomerNameByCharToSmall() == toCompareVIP_Ascending[j].getCustomerNameByCharToSmall()&&
                             Summary_.vipArr[i].getCustomerNameByCharToOrigin()<toCompareVIP_Ascending[j].getCustomerNameByCharToOrigin()){
                         for (int k=(Summary_.getVipCNT()-2);k>=(j+1);k--){
@@ -191,7 +186,6 @@ public static void showByName_Descending(){
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             toCompareVIP_Descending[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             for (int j = 0; j < Summary_.getVipCNT(); j++) {
                 if (Summary_.vipArr[i].getCustomerNameByCharToSmall() >= toCompareVIP_Descending[j].getCustomerNameByCharToSmall())
@@ -243,7 +237,6 @@ public static void showByName_Descending(){
         for (int i = 0; i < Summary_.getVvipCNT(); i++) {
             toCompareVVIP_Descending[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getVvipCNT(); i++) {
             for (int j = 0; j < Summary_.getVvipCNT(); j++) {
                 if (Summary_.vvipArr[i].getCustomerNameByCharToSmall() >= toCompareVVIP_Descending[j].getCustomerNameByCharToSmall())
@@ -264,6 +257,5 @@ public static void showByName_Descending(){
             }
         }
     }
-
 
 }
