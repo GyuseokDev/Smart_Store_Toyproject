@@ -37,7 +37,7 @@ public class SummaryByPayment {
             status= true;
             break;
          default:
-            System.out.println("올바른 형식이 아닙니다. 다시 입력해 주세요.");
+            System.out.print("올바른 형식이 아닙니다. 다시 입력해 주세요.");
             Select();
             break;
       }

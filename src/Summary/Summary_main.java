@@ -8,9 +8,9 @@ public  class Summary_main {
     static Scanner sc = new Scanner(System.in);
     public static void summaryMenu() {
         System.out.print("==============================\n" +
-                " 1. 요약 보기\n" +
-                " 2. 이름순으로 보기\n" +
-                " 3. 사용시간 순으로 보기\n" +
+                " 1. 등록 순으로 보기\n" +
+                " 2. 이름 순으로 보기\n" +
+                " 3. 총 사용시간 순으로 보기\n" +
                 " 4. 총 사용금액 순으로 보기\n" +
                 " 5. 메인메뉴\n"+
                 "==============================\n" +
@@ -28,7 +28,7 @@ public  class Summary_main {
                 break;
             case 2:
                 System.out.println("고객 정보를 이름순으로 출력합니다.");
-                SummaryByName.test();
+                SummaryByName.showByName_Menu();
                 break;
             case 3:
                 System.out.println("고객 정보를 사용 사용시간순으로 출력합니다.");
@@ -44,7 +44,7 @@ public  class Summary_main {
                 Menu.mainMenu();
                 break;
             default:
-                System.out.println("올바른 형식이 아닙니다. 다시 입력해 주세요.");
+                System.out.print("올바른 형식이 아닙니다. 다시 입력해 주세요.");
                 summarySelect();
         }
         if (status){
