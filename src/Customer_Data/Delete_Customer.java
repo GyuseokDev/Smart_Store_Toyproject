@@ -1,17 +1,16 @@
 package Customer_Data;
+import Exception.Exception;
 
-import java.util.Scanner;
 
 public class Delete_Customer {
-    static Scanner sc = new Scanner(System.in);
     static int targetNum;
     public static void setTargetNum(){
         View_Customer.viewToEdit();
         int num = Add_Customer.num;
         if(num>=1){
-            System.out.println("몇번째 고객의 정보를 삭제 하시겠습니까?\n(1~"+num+")");
-            System.out.print("취소하시려면 0을 입력해주세요.");
-            targetNum = sc.nextInt()-1;
+                System.out.println("몇번째 고객의 정보를 삭제 하시겠습니까?\n(1~" + num + ")");
+                System.out.print("취소하시려면 0을 입력해주세요.");
+                targetNum =  Exception.scannerInt()-1;
             if(targetNum>=0&&targetNum<=(num-1)) {
                 System.out.println("대상 고객의 정보를 삭제합니다.");
                 delete();
@@ -19,7 +18,8 @@ public class Delete_Customer {
                 System.out.println("삭제를 취소합니다.");
             }
             else {
-                System.out.println("옳바르지 않은 숫자입니다. 다시 입력해주세요.");
+                System.out.println("옳바르지 않은 입력입니다. 다시 입력해주세요.");
+                setTargetNum();
             }
         }
         else {

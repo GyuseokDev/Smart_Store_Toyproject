@@ -1,11 +1,6 @@
 package Summary;
-import Classification_Parameter.Parameter_Main;
-import Customer_Data.Add_Customer;
 import Customer_Data.Customer;
-
-import java.security.PublicKey;
-import java.util.Arrays.*;
-import java.util.Scanner;
+import Exception.Exception;
 
 public class SummaryByName {
     static Customer[] toCompareGeneral_Ascending = new Customer[Summary_.getGeneralCNT()];
@@ -28,17 +23,17 @@ public class SummaryByName {
     }
 
     public static void Select(){
-        Scanner sc = new Scanner(System.in);
-        String  select = sc.next();
+
+        int  select = Exception.scannerInt();
         boolean status = false;
         switch (select){
-            case "1":
+            case 1:
                 showByName_Ascending();
                 break;
-            case "2":
+            case 2:
                 showByName_Descending();
                 break;
-            case "3":
+            case 3:
                 System.out.println("요약 메뉴로 돌아갑니다.");
                 status= true;
                 break;

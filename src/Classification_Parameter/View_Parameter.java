@@ -1,6 +1,6 @@
 package Classification_Parameter;
+import Exception.Exception;
 
-import java.util.Scanner;
 
 public class View_Parameter {
     public static void viewMenu(){
@@ -17,8 +17,7 @@ public class View_Parameter {
     }
 
     public static void select(){
-        Scanner sc = new Scanner(System.in);
-        int select = sc.nextInt();
+        int select = Exception.scannerInt();
         boolean status = true;
         switch (select){
             case 1:

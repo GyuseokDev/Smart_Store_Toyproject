@@ -1,8 +1,6 @@
 package Customer_Data;
 
 import Main.Menu;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Customer_Main {
@@ -20,26 +18,26 @@ public class Customer_Main {
     }
 
     public static void  customerSelect() {
-        int menuNum = sc.nextInt();
+        String menuNum = sc.next();
         boolean status = false;
             switch (menuNum) {
-                case 1:
+                case "1":
                     System.out.println("고객 정보를 추가합니다.");
                     Add_Customer.add_Start();
                     break;
-                case 2:
+                case "2":
                     System.out.println("고객 정보를 출력합니다.");
                     View_Customer.view();
                     break;
-                case 3:
+                case "3":
                     System.out.println("고객 정보를 변경합니다.");
                     Update_Customer.setTargetNum();
                     break;
-                case 4:
+                case "4":
                     System.out.println("고객 정보를 삭제합니다.");
                     Delete_Customer.setTargetNum();
                     break;
-                case 5:
+                case "5":
                     System.out.println("메인메뉴로 돌아갑니다.");
                     status = true;
                     break;

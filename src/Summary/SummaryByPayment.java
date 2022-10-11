@@ -1,8 +1,8 @@
 package Summary;
 
 import Customer_Data.Customer;
+import Exception.Exception;
 
-import java.util.Scanner;
 
 public class SummaryByPayment {
    static Customer[] toCompareGeneral_Ascending = new Customer[Summary_.getGeneralCNT()];
@@ -22,17 +22,16 @@ public class SummaryByPayment {
    }
 
    public static void Select(){
-      Scanner sc = new Scanner(System.in);
-      String  select = sc.next();
+      int select = Exception.scannerInt();
       boolean status = false;
       switch (select){
-         case "1":
+         case 1:
             showByPayment_Ascending();
             break;
-         case "2":
+         case 2:
             showByPayment_Descending();
             break;
-         case "3":
+         case 3:
             System.out.println("요약 메뉴로 돌아갑니다.");
             status= true;
             break;
@@ -102,7 +101,6 @@ public static void makeArr(){
       for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
          toCompareGeneral_Ascending[i] = new Customer(null, null, 0, 0);
       }
-      //비교
       for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
          for (int j = 0; j < Summary_.getGeneralCNT(); j++) {
             if (Summary_.generalArr[i].getCustomerPayment() >= toCompareGeneral_Ascending[j].getCustomerPayment()) {
@@ -120,7 +118,6 @@ public static void makeArr(){
          for (int i = 0; i < Summary_.getVipCNT(); i++) {
             toCompareVIP_Ascending[i] = new Customer(null, null, 0, 0);
          }
-         //비교
          for (int i = 0; i < Summary_.getVipCNT(); i++) {
             for (int j = 0; j < Summary_.getVipCNT(); j++) {
                if (Summary_.vipArr[i].getCustomerPayment() >= toCompareVIP_Ascending[j].getCustomerPayment()) {
@@ -138,7 +135,6 @@ public static void makeArr(){
       for (int i = 0; i < Summary_.getVvipCNT(); i++) {
          toCompareVVIP_Ascending[i] = new Customer(null, null, 0, 0);
       }
-      //비교
       for (int i = 0; i < Summary_.getVvipCNT(); i++) {
          for (int j = 0; j < Summary_.getVvipCNT(); j++) {
             if (Summary_.vvipArr[i].getCustomerPayment() >= toCompareVVIP_Ascending[j].getCustomerPayment()) {

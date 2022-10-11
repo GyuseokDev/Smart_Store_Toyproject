@@ -1,9 +1,7 @@
 package Classification_Parameter;
-
-import java.util.Scanner;
+import Exception.Exception;
 
 public class Update_Parameter {
-    static Scanner sc = new Scanner(System.in);
     public static void set_menu(){
         System.out.println("분류 기준을 수정할 등급을 선택 해주세요.");
         System.out.print("==============================\n"+
@@ -17,7 +15,7 @@ public class Update_Parameter {
     }
 
     public static void menu_select(){
-        int menu = sc.nextInt();
+        int menu = Exception.scannerInt();
         boolean status = false;
         switch (menu){
             case 1:

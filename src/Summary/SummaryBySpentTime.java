@@ -2,7 +2,7 @@ package Summary;
 
 import Customer_Data.Customer;
 
-import java.util.Scanner;
+import Exception.Exception;
 
 public class SummaryBySpentTime {
     static Customer[] toCompareGeneral_Ascending = new Customer[Summary_.getGeneralCNT()];
@@ -22,17 +22,16 @@ public class SummaryBySpentTime {
     }
 
     public static void Select(){
-        Scanner sc = new Scanner(System.in);
-        String  select = sc.next();
+        int  select = Exception.scannerInt();
         boolean status = false;
         switch (select){
-            case "1":
+            case 1:
                 showByTime_Ascending();
                 break;
-            case "2":
+            case 2:
                 showByTime_Descending();
                 break;
-            case "3":
+            case 3:
                 System.out.println("요약 메뉴로 돌아갑니다.");
                 status= true;
                 break;

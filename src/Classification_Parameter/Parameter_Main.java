@@ -1,10 +1,9 @@
 package Classification_Parameter;
 import Main.*;
-
-import java.util.Scanner;
+import Exception.Exception;
 
 public class Parameter_Main {
-     static Scanner sc = new Scanner(System.in);
+
     public static void parameterMenu() {
         System.out.print("==============================\n" +
                 " 1. 분류기준 설정\n" +
@@ -17,7 +16,7 @@ public class Parameter_Main {
     }
 
     public static void parameterSelect(){
-        int menuNum = sc.nextInt();
+        int menuNum = Exception.scannerInt();
         boolean status=false;
         switch (menuNum){
             case 1:

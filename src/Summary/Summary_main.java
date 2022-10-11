@@ -1,12 +1,17 @@
 package Summary;
 
+import Customer_Data.Add_Customer;
 import Main.Menu;
+import Exception.Exception;
 
-import java.util.Scanner;
+
 
 public  class Summary_main {
-    static Scanner sc = new Scanner(System.in);
     public static void summaryMenu() {
+        if (Add_Customer.getNum()==0){
+            System.out.println("고객 정보가 충분히 존재하지 않습니다. 메인메뉴로 돌아갑니다.");
+            Menu.mainMenu();
+        }else {
         System.out.print("==============================\n" +
                 " 1. 등록 순으로 보기\n" +
                 " 2. 이름 순으로 보기\n" +
@@ -15,11 +20,11 @@ public  class Summary_main {
                 " 5. 메인메뉴\n"+
                 "==============================\n" +
                 "메뉴를 선택해주세요:");
-        summarySelect();
+        summarySelect();}
     }
 
     public static void  summarySelect(){
-        int menuNum = sc.nextInt();
+        int menuNum = Exception.scannerInt();
         boolean status = false;
         switch (menuNum){
             case 1:

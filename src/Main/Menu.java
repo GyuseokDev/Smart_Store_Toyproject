@@ -1,10 +1,9 @@
 package Main;
 
 import Classification_Parameter.Parameter_Main;
-import Customer_Data.Add_Customer;
-import Customer_Data.Customer;
 import Customer_Data.Customer_Main;
 import Summary.*;
+import Exception.Exception;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,8 +24,7 @@ public  class Menu {
     }
     public  static void selectMainMenu(){
         Scanner sc = new Scanner(System.in);
-        try {
-            int menu_Num = sc.nextInt();
+            int menu_Num = Exception.scannerInt();
             switch (menu_Num) {
                 case 1:
                     System.out.println("분류 매개변수 메뉴로 이동합니다.");
@@ -48,11 +46,6 @@ public  class Menu {
                 default:
                     System.out.println("올바른 형식이 아닙니다. 다시 입력해 주세요.");
                     selectMainMenu();
-            }
-        }
-        catch (InputMismatchException ime){
-            System.out.println("올바른 형식이 아닙니다. 다시 입력해 주세요.");
-            selectMainMenu();
         }
     }
 }

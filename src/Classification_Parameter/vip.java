@@ -1,6 +1,5 @@
 package Classification_Parameter;
-
-import com.sun.jdi.VoidValue;
+import Exception.Exception;
 
 public class vip extends general {
     private static int minTime= 10;
@@ -38,12 +37,12 @@ public class vip extends general {
     }
             public static void select(){
             boolean status = true;
-            int select = sc.nextInt();
+            int select = Exception.scannerInt();
             switch (select){
                 case 1:
                     System.out.println(grade+" 등급의 최소 사용시간은 "+general.getMinTime()+"시간 보다 크고 "+vvip.getMinTime()+"시간보다 작아야합니다.");
                     System.out.print(grade+" 등급의 최소 사용시간을 입력하세요: ");
-                    int time = sc.nextInt();
+                    int time = Exception.scannerInt();
                     if(time>general.getMinTime()&&time<vvip.getMinTime()){
                         vip.setMinTime(time);
                         System.out.println(grade+" 등급의 최소 사용시간이 "+time+"시간으로 설정되었습니다.");
@@ -54,7 +53,7 @@ public class vip extends general {
                 case 2:
                     System.out.println(grade+" 등급의 최소 사용금액은 "+general.getMinMoney()+"원 보다 크고 "+vvip.getMinMoney()+"원보다 작아야합니다.");
                     System.out.print(grade+" 등급의 최소 사용금액을 입력하세요: ");
-                    int money = sc.nextInt();
+                    int money = Exception.scannerInt();
                     if (money>general.getMinMoney()&&money<vvip.getMinMoney()) {
                         vip.setMinMoney(money);
                         System.out.println(grade+" 등급의 최소 사용금액이 "+money+"원으로 설정되었습니다.");
@@ -90,12 +89,12 @@ public class vip extends general {
     }
     public static void select2(){
         boolean status = true;
-        int select = sc.nextInt();
+        int select = Exception.scannerInt();
         switch (select){
             case 1:
                 System.out.println(grade+" 등급의 최소 사용시간은 "+general.getMinTime()+"시간 보다 크고 "+vvip.getMinTime()+"시간보다 작아야합니다.");
                 System.out.print(grade+" 등급의 최소 사용시간을 입력하세요: ");
-                int time = sc.nextInt();
+                int time = Exception.scannerInt();
                 if(time>general.getMinTime()&&time<vvip.getMinTime()){
                     vip.setMinTime(time);
                     System.out.println(grade+" 등급의 최소 사용시간이 "+time+"시간으로 수정되었습니다.");
@@ -106,7 +105,7 @@ public class vip extends general {
             case 2:
                 System.out.println(grade+" 등급의 최소 사용금액은 "+general.getMinMoney()+"원 보다 크고 "+vvip.getMinMoney()+"원보다 작아야합니다.");
                 System.out.print(grade+" 등급의 최소 사용금액을 입력하세요: ");
-                int money = sc.nextInt();
+                int money = Exception.scannerInt();
                 if (money>general.getMinMoney()&&money<vvip.getMinMoney()) {
                     vip.setMinMoney(money);
                     System.out.println(grade+" 등급의 최소 사용금액이 "+money+"원으로 수정되었습니다.");

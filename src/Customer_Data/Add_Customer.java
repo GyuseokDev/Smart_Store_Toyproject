@@ -1,10 +1,8 @@
 package Customer_Data;
-
-import java.util.InputMismatchException;
+import Exception.Exception;
 import java.util.Scanner;
 
 public class Add_Customer {
-    static Scanner sc = new Scanner(System.in);
 
 
     static int add_num;
@@ -37,7 +35,7 @@ public class Add_Customer {
 
 
     public static void newCustomerNum(){
-        add_num = sc.nextInt();
+        add_num = Exception.scannerInt();
         if(add_num==0){
             System.out.println("고객 정보 추가를 취소합니다.");
             Customer_Main.customerMenu();
@@ -46,7 +44,7 @@ public class Add_Customer {
             new_Customer_Array();
         }
         else {
-            System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+            System.out.print("잘못된 입력입니다. 다시 입력해주세요");
             newCustomerNum();
         }
     }
@@ -62,6 +60,7 @@ public class Add_Customer {
     }
 
     public static void addMenu(){
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i<add_num;i++){
             String name=null;
             String ID=null;
@@ -79,30 +78,67 @@ public class Add_Customer {
                         "5. 고객 정보 입력 종료\n" +
                         "==============================\n" +
                         "메뉴를 선택해주세요 :");
-                int n = sc.nextInt();
+                String n = sc.next();
                 switch (n) {
-                    case 1:
-                        System.out.print("고객 이름을 입력해주세요 :");
-                        name = sc.next();
+                    case "1":
+                        System.out.print("고객 이름은 영문자로만 3글자 이상 입력해주세요.\n" +
+                                "고객 이름을 입력해주세요 :");
+                        String tempName = sc.next();
+                        if(tempName.length()<3){
+                            System.out.println("3글자 이상 입력해야합니다.이름 입력을 취소합니다.");
+                            break;
+                        }
+                        boolean nameformat=Exception.nameFormat(tempName);
+                        if(nameformat){
+                            name = tempName;
+                            System.out.println("이름을 "+name+"으로 저장했습니다.");
+                        }else if(!nameformat){
+                            System.out.println("이름은 영문자만 사용이 가능합니다. 이름 입력을 취소합니다.");
+                        }
                         break;
-                    case 2:
-                        System.out.print("고객 아이디를 입력해주세요 :");
-                        ID = sc.next();
+                    case "2":
+                        System.out.print("ID는 영문자,숫자,_으로 5~12글자 사이로 입력해주세요.\n" +
+                                "고객 아이디를 입력해주세요 :");
+                        String tempID = sc.next();
+                        if(tempID.length()>12||tempID.length()<5){
+                            System.out.println("5~12글자 사이로 입력해야합니다.ID 입력을 취소합니다.");
+                            break;
+                        }
+                        boolean idformat = Exception.idFormat(tempID);
+                        if(idformat){
+                            ID = tempID;
+                            System.out.println("ID를 "+ID+"으로 저장했습니다.");
+                        }else if(!idformat){
+                            System.out.println("영문자,숫자,_ 만 사용이 가능합니다. 아이디 입력을 취소합니다.");
+                        }
                         break;
-                    case 3:
+                    case "3":
                         System.out.print("고객 사용시간을 입력해주세요 :");
-                        spentTime = sc.nextInt();
+                        int tempTime = Exception.scannerInt();
+                        if(tempTime<0){
+                            System.out.println("올바른 형식이 아닙니다. 사용시간 입력을 취소합니다.");
+                        }else {
+                            spentTime = tempTime;
+                            System.out.println("사용시간을 "+spentTime+"시간으로 저장했습니다.");
+                        }
                         break;
-                    case 4:
+                    case "4":
                         System.out.print("고객 사용금액을 입력해주세요 :");
-                        payment = sc.nextInt();
+                        int tempPayment = Exception.scannerInt();
+                        if(tempPayment<0){
+                            System.out.println("올바른 형식이 아닙니다. 사용금액 입력을 취소합니다.");
+                        }
+                        else {
+                            payment =tempPayment;
+                            System.out.println("사용금액을 "+payment+"원으로 저장했습니다.");
+                        }
                         break;
-                    case 5:
+                    case "5":
                         System.out.println(i + 1 + "번째 고객의 정보 입력을 종료합니다.\n");
                         status = false;
                         break;
                     default:
-                        System.out.println("올바른 형식이 아닙니다. 다시 입력해 주세요.");
+                        System.out.print("올바른 형식이 아닙니다. 다시 입력해 주세요.");
                 }
             }
             customerArray[num+i]= new Customer(name,ID,spentTime,payment);

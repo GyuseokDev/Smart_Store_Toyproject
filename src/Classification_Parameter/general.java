@@ -1,9 +1,7 @@
 package Classification_Parameter;
 
-import java.util.Scanner;
 
 public class general {
-    static Scanner sc = new Scanner(System.in);
     private static int minTime =0;
     private static int minMoney=0;
     final private static String grade = "General";

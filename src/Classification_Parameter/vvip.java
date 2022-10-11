@@ -1,4 +1,5 @@
 package Classification_Parameter;
+import Exception.Exception;
 
 public class vvip extends general {
     private static int minTime=20;
@@ -37,12 +38,12 @@ public class vvip extends general {
     }
     public static void select(){
         boolean status = true;
-        int select = sc.nextInt();
+        int select = Exception.scannerInt();
         switch (select){
             case 1:
                 System.out.println(grade+" 등급의 최소 사용시간은 "+vip.getMinTime()+"시간 보다 커야합니다.");
                 System.out.print(grade+" 등급의 최소 사용시간을 입력하세요: ");
-                int time = sc.nextInt();
+                int time = Exception.scannerInt();
                 if(time>vip.getMinTime()) {
                     vvip.setMinTime(time);
                     System.out.println(grade+" 등급의 최소 사용시간이 "+time+"시간으로 설정되었습니다.");
@@ -53,7 +54,7 @@ public class vvip extends general {
             case 2:
                 System.out.println(grade+" 등급의 최소 사용금액은 "+vip.getMinMoney()+"원 보다 커야합니다.");
                 System.out.print(grade+" 등급의 최소 사용금액을 입력하세요: ");
-                int money = sc.nextInt();
+                int money = Exception.scannerInt();
                 if(money>vip.getMinMoney()) {
                     vvip.setMinMoney(money);
                     System.out.println(grade+" 등급의 최소 사용금액이 "+money+"원으로 설정되었습니다.");
@@ -89,12 +90,12 @@ public class vvip extends general {
     }
     public static void select2(){
         boolean status = true;
-        int select = sc.nextInt();
+        int select = Exception.scannerInt();
         switch (select){
             case 1:
                 System.out.println(grade+" 등급의 최소 사용시간은 "+vip.getMinTime()+"시간 보다 커야합니다.");
                 System.out.print(grade+" 등급의 최소 사용시간을 입력하세요: ");
-                int time = sc.nextInt();
+                int time = Exception.scannerInt();
                 if(time>vip.getMinTime()) {
                     vvip.setMinTime(time);
                     System.out.println(grade+" 등급의 최소 사용시간이 "+time+"시간으로 수정되었습니다.");
@@ -105,7 +106,7 @@ public class vvip extends general {
             case 2:
                 System.out.println(grade+" 등급의 최소 사용금액은 "+vip.getMinMoney()+"원 보다 커야합니다.");
                 System.out.print(grade+" 등급의 최소 사용금액을 입력하세요: ");
-                int money = sc.nextInt();
+                int money = Exception.scannerInt();
                 if(money>vip.getMinMoney()) {
                     vvip.setMinMoney(money);
                     System.out.println(grade+" 등급의 최소 사용금액이 "+money+"원으로 수정되었습니다.");
