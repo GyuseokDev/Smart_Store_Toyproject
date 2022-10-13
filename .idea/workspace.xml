@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dacd47c9-5d63-4a83-8974-72df98236030" name="Changes" comment="모든 method 및 기능 구현 완료. 예외처리 완료.">
+    <list default="true" id="dacd47c9-5d63-4a83-8974-72df98236030" name="Changes" comment="토이 프로젝트 완료. 오류 수정 완료.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer_Data/Add_Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer_Data/Add_Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary/SummaryByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary/SummaryByName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary/SummaryByPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary/SummaryByPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary/SummaryBySpentTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary/SummaryBySpentTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary/Summary_.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary/Summary_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665519184539</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="토이 프로젝트 완료. 오류 수정 완료.">
+      <created>1665652666090</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652666090</updated>
+    </task>
+    <task id="LOCAL-00013" summary="토이 프로젝트 완료. 오류 수정 완료.">
+      <created>1665652700286</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652700286</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +180,7 @@
     <MESSAGE value="summary By TIme 구현 완료" />
     <MESSAGE value="모든 method 및 기능 구현 완료. (예외처리는 하나도 안되어있음.)" />
     <MESSAGE value="모든 method 및 기능 구현 완료. 예외처리 완료." />
-    <option name="LAST_COMMIT_MESSAGE" value="모든 method 및 기능 구현 완료. 예외처리 완료." />
+    <MESSAGE value="토이 프로젝트 완료. 오류 수정 완료." />
+    <option name="LAST_COMMIT_MESSAGE" value="토이 프로젝트 완료. 오류 수정 완료." />
   </component>
 </project>
