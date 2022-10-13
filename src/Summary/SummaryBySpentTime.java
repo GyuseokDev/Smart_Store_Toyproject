@@ -5,9 +5,9 @@ import Customer_Data.Customer;
 import Exception.Exception;
 
 public class SummaryBySpentTime {
-    static Customer[] toCompareGeneral_Ascending = new Customer[Summary_.getGeneralCNT()];
-    static Customer[] toCompareVIP_Ascending = new Customer[Summary_.getVipCNT()];
-    static Customer[] toCompareVVIP_Ascending = new Customer[Summary_.getVvipCNT()];
+    static Customer[] toCompareGeneralByTime_Ascending = new Customer[0];
+    static Customer[] toCompareVIPByTime_Ascending = new Customer[0];
+    static Customer[] toCompareVVIPByTime_Ascending = new Customer[0];
 
 
     public static void showByTime_Menu(){
@@ -51,18 +51,18 @@ public class SummaryBySpentTime {
         System.out.println("사용 시간이 높은 순으로 출력합니다.");
         System.out.println("==============================");
         System.out.println("General List");
-        for (int i = 0; i < toCompareGeneral_Ascending.length; i++) {
-            System.out.println(toCompareGeneral_Ascending[i].showCustomerInfo());
+        for (int i = 0; i < toCompareGeneralByTime_Ascending.length; i++) {
+            System.out.println(toCompareGeneralByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("VIP List");
-        for (int i = 0; i < toCompareVIP_Ascending.length; i++) {
-            System.out.println(toCompareVIP_Ascending[i].showCustomerInfo());
+        for (int i = 0; i < toCompareVIPByTime_Ascending.length; i++) {
+            System.out.println(toCompareVIPByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("VVIP List");
-        for (int i = 0; i < toCompareVVIP_Ascending.length; i++) {
-            System.out.println(toCompareVVIP_Ascending[i].showCustomerInfo());
+        for (int i = 0; i < toCompareVVIPByTime_Ascending.length; i++) {
+            System.out.println(toCompareVVIPByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("출력이 완료되었습니다\n");
@@ -72,18 +72,18 @@ public class SummaryBySpentTime {
         System.out.println("사용 시간이 낮은 순으로 출력합니다.");
         System.out.println("==============================");
         System.out.println("General List");
-        for (int i=(toCompareGeneral_Ascending.length-1);i>=0;i--){
-            System.out.println(toCompareGeneral_Ascending[i].showCustomerInfo());
+        for (int i = (toCompareGeneralByTime_Ascending.length-1); i>=0; i--){
+            System.out.println(toCompareGeneralByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("VIP List");
-        for (int i=(toCompareVIP_Ascending.length-1);i>=0;i--){
-            System.out.println(toCompareVIP_Ascending[i].showCustomerInfo());
+        for (int i = (toCompareVIPByTime_Ascending.length-1); i>=0; i--){
+            System.out.println(toCompareVIPByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("VVIP List");
-        for (int i=(toCompareVVIP_Ascending.length-1);i>=0;i--){
-            System.out.println(toCompareVVIP_Ascending[i].showCustomerInfo());
+        for (int i = (toCompareVVIPByTime_Ascending.length-1); i>=0; i--){
+            System.out.println(toCompareVVIPByTime_Ascending[i].showCustomerInfo());
         }
         System.out.println("==============================");
         System.out.println("출력이 완료되었습니다\n");
@@ -98,57 +98,61 @@ public class SummaryBySpentTime {
     //General 그룹 사용시간별 크기로 정렬
     public static void makeGeneralArrByTime_Ascending() {
         //비교하기위한 새로운 배열 생성(빈배열)
+        Customer[] makeGeneral = new Customer[Summary_.getGeneralCNT()];
         for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
-            toCompareGeneral_Ascending[i] = new Customer(null, null, 0, 0);
+            makeGeneral[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getGeneralCNT(); i++) {
             for (int j = 0; j < Summary_.getGeneralCNT(); j++) {
-                if (Summary_.generalArr[i].getCustomerSpentTime() >= toCompareGeneral_Ascending[j].getCustomerSpentTime()) {
+                if (Summary_.generalArr[i].getCustomerSpentTime() >= makeGeneral[j].getCustomerSpentTime()) {
                     for (int k = (Summary_.getGeneralCNT() - 2); k >= j; k--) {
-                        toCompareGeneral_Ascending[k + 1] = toCompareGeneral_Ascending[k];
+                        makeGeneral[k + 1] = makeGeneral[k];
                     }
-                    toCompareGeneral_Ascending[j] = Summary_.generalArr[i];
+                    makeGeneral[j] = Summary_.generalArr[i];
                     break;
                 }
             }
         }
+        toCompareGeneralByTime_Ascending = makeGeneral;
     }
 
     public static void makeVIPArrByTime_Ascending(){
+        Customer[] makevip = new Customer[Summary_.getVipCNT()];
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
-            toCompareVIP_Ascending[i] = new Customer(null, null, 0, 0);
+            makevip[i] = new Customer(null, null, 0, 0);
         }
         //비교
         for (int i = 0; i < Summary_.getVipCNT(); i++) {
             for (int j = 0; j < Summary_.getVipCNT(); j++) {
-                if (Summary_.vipArr[i].getCustomerSpentTime() >= toCompareVIP_Ascending[j].getCustomerSpentTime()) {
+                if (Summary_.vipArr[i].getCustomerSpentTime() >= makevip[j].getCustomerSpentTime()) {
                     for (int k = (Summary_.getVipCNT() - 2); k >= j; k--) {
-                        toCompareVIP_Ascending[k + 1] = toCompareVIP_Ascending[k];
+                        makevip[k + 1] = makevip[k];
                     }
-                    toCompareVIP_Ascending[j] = Summary_.vipArr[i];
+                    makevip[j] = Summary_.vipArr[i];
                     break;
                 }
             }
         }
+        toCompareVIPByTime_Ascending =makevip;
     }
 
     public static void makeVVIPArrByTime_Ascending(){
+        Customer[] makevip = new Customer[Summary_.getVvipCNT()];
         for (int i = 0; i < Summary_.getVvipCNT(); i++) {
-            toCompareVVIP_Ascending[i] = new Customer(null, null, 0, 0);
+            makevip[i] = new Customer(null, null, 0, 0);
         }
-        //비교
         for (int i = 0; i < Summary_.getVvipCNT(); i++) {
             for (int j = 0; j < Summary_.getVvipCNT(); j++) {
-                if (Summary_.vvipArr[i].getCustomerSpentTime() >= toCompareVVIP_Ascending[j].getCustomerSpentTime()) {
+                if (Summary_.vvipArr[i].getCustomerSpentTime() >= makevip[j].getCustomerSpentTime()) {
                     for (int k = (Summary_.getVvipCNT() - 2); k >= j; k--) {
-                        toCompareVVIP_Ascending[k + 1] = toCompareVVIP_Ascending[k];
+                        makevip[k + 1] = makevip[k];
                     }
-                    toCompareVVIP_Ascending[j] = Summary_.vvipArr[i];
+                    makevip[j] = Summary_.vvipArr[i];
                     break;
                 }
             }
         }
+        toCompareVVIPByTime_Ascending =makevip;
     }
 
 }

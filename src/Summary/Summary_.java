@@ -12,42 +12,59 @@ public class Summary_ {
 
 
 
+
     public static void makeArr(){
+        Customer[] makeGeneral = new Customer[0];
+        Customer[] makeVIP = new Customer[0];
+        Customer[] makeVVIP = new Customer[0];
+        int generalnum=0;
+        int vipnum=0;
+        int vvipnum=0;
+
         for (int i=0;i<Add_Customer.customerArray.length;i++){
             //vvip
             if(Add_Customer.customerArray[i].getCustomerPayment()>=vvip.getMinMoney()&&Add_Customer.customerArray[i].getCustomerSpentTime()>=vvip.getMinTime()){
-                vvipCNT++;
-                Customer[] newArr1 = new Customer[vvipCNT];
-                for (int j= 0; j < vvipArr.length;j++){
-                    newArr1[j]=vvipArr[j];
+                vvipnum++;
+                Customer[] newArr1 = new Customer[vvipnum];
+                for (int j= 0; j < makeVVIP.length;j++){
+                    newArr1[j]=makeVVIP[j];
                 }
-                vvipArr = newArr1;
-                vvipArr[(vvipCNT-1)]=Add_Customer.customerArray[i];
+                makeVVIP = newArr1;
+                makeVVIP[(vvipnum-1)]=Add_Customer.customerArray[i];
 //                System.out.println("vvip추가");
             }
             //vip
             else if(Add_Customer.customerArray[i].getCustomerPayment()>=vip.getMinMoney()&&Add_Customer.customerArray[i].getCustomerSpentTime()>=vip.getMinTime()) {
-                vipCNT++;
-                Customer[] newArr2 = new Customer[vipCNT];
-                for (int j = 0; j < vipArr.length; j++) {
-                    newArr2[j] = vipArr[j];
+                vipnum++;
+                Customer[] newArr2 = new Customer[vipnum];
+                for (int j = 0; j < makeVIP.length; j++) {
+                    newArr2[j] = makeVIP[j];
                 }
-                vipArr = newArr2;
-                vipArr[(vipCNT - 1)] = Add_Customer.customerArray[i];
+                makeVIP = newArr2;
+                makeVIP[(vipnum - 1)] = Add_Customer.customerArray[i];
 //                System.out.println("vip추가");
             }
             //general
             else {
-                generalCNT++;
-                Customer[] newArr3 = new Customer[generalCNT];
-                for(int j = 0;j<generalArr.length;j++){
-                    newArr3[j] = generalArr[j];
+                generalnum++;
+                Customer[] newArr3 = new Customer[generalnum];
+                for(int j = 0;j<makeGeneral.length;j++){
+                    newArr3[j] = makeGeneral[j];
                 }
-                generalArr = newArr3;
-                generalArr[(generalCNT-1)] = Add_Customer.customerArray[i];
+                makeGeneral = newArr3;
+                makeGeneral[(generalnum-1)] = Add_Customer.customerArray[i];
 //                System.out.println("general 추가");
             }
         }
+        generalArr = new Customer[generalnum];
+        vipArr = new Customer[vipnum];
+        vvipArr = new Customer[vvipnum];
+        generalArr = makeGeneral;
+        vipArr = makeVIP;
+        vvipArr = makeVVIP;
+        generalCNT =generalnum;
+        vipCNT = vipnum;
+        vvipCNT=vvipnum;
     }
 
     public static void show(){
